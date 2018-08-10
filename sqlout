@@ -19,6 +19,9 @@ CREATE TABLE
 demo=# alter table base add primary key(code)
 demo-# ;
 ALTER TABLE
-demo=# create table rel(code varchar(100) references base(code), description varchar(100));
+create table rel(code varchar(100), description varchar(100));
 CREATE TABLE
-demo=#
+demo=# INSERT INTO sch.rel values('000', '54545');
+INSERT 0 1
+demo=# INSERT INTO sch.rel values('001', '54555');
+INSERT 0 1

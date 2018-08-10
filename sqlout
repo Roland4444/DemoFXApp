@@ -1,0 +1,24 @@
+[root@archlinux roland]# su postgres
+[postgres@archlinux roland]$ psql
+could not change directory to "/home/roland": Permission denied
+psql (9.6.8)
+Type "help" for help.
+
+postgres=# create database mydb;
+ERROR:  database "mydb" already exists
+postgres=# create database demo;
+CREATE DATABASE
+postgres=# \connect demo;
+You are now connected to database "demo" as user "postgres".
+demo=# create schema sch AUTHORIZATION postgres;
+CREATE SCHEMA
+demo=# set search_path to sch;
+SET
+demo=# CREATE TABLE base(code varchar(100));
+CREATE TABLE
+demo=# alter table base add primary key(code)
+demo-# ;
+ALTER TABLE
+demo=# create table rel(code varchar(100) references base(code), description varchar(100));
+CREATE TABLE
+demo=#

@@ -159,7 +159,7 @@ public class Main extends Application {
         combo.setItems(data__);
     }
 
-   
+
     public ObservableList<String> getDataList() throws SQLException {
         ObservableList<String> data_ = FXCollections.observableArrayList();
         Select=exc.submit("SELECT * FROM sch.rel");

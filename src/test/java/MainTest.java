@@ -10,9 +10,8 @@ public class MainTest extends TestCase {
 
     @Test
     public void testGetList() throws SQLException {
-        Main m = new Main();
         readfile foo2 = new readfile();
-        m.setExec(new Executor(foo2.read(),"postgres","postgres"));
-        assertNotEquals(null, m.getDataList());
+        Executor exc = new Executor(foo2.read(), "postgres", "postgres");
+        assertNotEquals(null, exc.submit("SELECT * FROM sch.rel"));
     }
 }
